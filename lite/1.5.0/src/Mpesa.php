@@ -6,7 +6,7 @@
  * API. It's documentation is available online at Safaricom Developers' Portal.
  * @see <https://developer.safaricom.co.ke>
  * 
- * @link https://github.com/mikeotizels/mpesa/lite/
+ * @link https://github.com/mikeotizels/mpesa/
  * 
  * @category  M-PESA API Integration
  * @package   Mikeotizels/API/ThirdParty/Safaricom/Mpesa
