@@ -9,8 +9,8 @@ try {
     $mpesa = new Mikeotizels\Mpesa\Mpesa();
 
     $mpesa->Environment    = 'testing';
-    $mpesa->ConsumerKey    = 'srn86N3UAq6bMAAiB2VLAr1jAwDghHb6';
-    $mpesa->ConsumerSecret = 'AbsFu26XOezp7570';
+    $mpesa->ConsumerKey    = 'your_mpesa_app_consumer_key';
+    $mpesa->ConsumerSecret = 'your_mpesa_app_consumer_secret';
     $mpesa->ShortCode      = '174379';
     $mpesa->PassKey        = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919';
 
