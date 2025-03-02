@@ -7,7 +7,6 @@
 spl_autoload_register(function ($class) {
     static $map = array (        
         'Mikeotizels\\Mpesa\\Callback' => 'src/Callback.php',
-        'Mikeotizels\\Mpesa\\Exception' => 'src/Exception.php',
         'Mikeotizels\\Mpesa\\Mpesa' => 'src/Mpesa.php'
     );
 
