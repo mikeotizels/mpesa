@@ -11,7 +11,7 @@ https://packagist.org/packages/smodav/mpesa/
 
 # Requirements
 
-- PHP 7.3+
+- PHP 7.4+
 
 # Documentation
 
