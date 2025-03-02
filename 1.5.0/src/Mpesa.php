@@ -7,9 +7,8 @@
  * 
  * @link https://github.com/mikeotizels/mpesa/
  * 
- * @package    Mikeotizels/APIs/ThirdParty/Safaricom/Mpesa
  * @author     Michael Otieno <mikeotizels@gmail.com>
- * @copyright  Copyright 2020-2022 Michael Otieno
+ * @copyright  Copyright 2022-2023 Michael Otieno
  * @license    Licensed under The MIT License (MIT). For the license terms, 
  *             please see the LICENSE file that was distributed with this 
  *             source code or visit <https://opensource.org/licenses/MIT>.
@@ -22,8 +21,6 @@ use Exception;
 
 /**
  * Class Mpesa
- *
- * This is the M-PESA APIs access abstraction object. 
  *
  * @since 1.0.0
  */
