@@ -16,7 +16,7 @@ namespace Mikeotizels\Mpesa;
  *
  * Gets the result received once the request has been processed by M-PESA.
  *
- * @since 1.2.0
+ * @since 1.5.0
  */
 class Callback
 {   
@@ -26,7 +26,7 @@ class Callback
      * Get the Lipa na M-PESA Online payment request response data posted in the 
      * callback URL.     
      *
-     * @since 1.2.0
+     * @since 1.5.0
      *
      * @return mixed 
      */
@@ -74,7 +74,7 @@ class Callback
      * Get the Lipa na M-PESA Online query request response data posted in the 
      * callback URL.     
      *
-     * @since 1.2.0
+     * @since 1.5.0
      *
      * @return mixed 
      */
@@ -114,7 +114,7 @@ class Callback
      * Get the C2B simulate confirmation and validation response data posted in 
      * the confirmation and validation URL.     
      *
-     * @since 1.2.0
+     * @since 1.5.0
      * 
      * @return mixed  
      */
@@ -167,7 +167,7 @@ class Callback
      *
      * Get the B2C payment request response data posted in the result URL.     
      *
-     * @since 1.2.0
+     * @since 1.5.0
      *                              
      * @return mixed 
      */
@@ -227,7 +227,7 @@ class Callback
      *
      * Get the B2B payment request response data posted in the result URL.     
      *
-     * @since 1.2.0
+     * @since 1.5.0
      * 
      * @return mixed 
      */
@@ -287,7 +287,7 @@ class Callback
      *
      * Get the transaction status query response data posted in the result URL.     
      *
-     * @since 1.2.0
+     * @since 1.5.0
      *
      * @return mixed 
      */
@@ -357,7 +357,7 @@ class Callback
      *
      * Get the account balance query response data posted in the result URL.     
      *
-     * @since 1.2.0
+     * @since 1.5.0
      *
      * @return mixed 
      */
@@ -405,7 +405,7 @@ class Callback
      *
      * Get the reversal request response data posted in the result URL.     
      *
-     * @since 1.2.0
+     * @since 1.5.0
      *
      * @return mixed 
      */
