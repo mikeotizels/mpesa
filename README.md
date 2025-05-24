@@ -3,7 +3,7 @@ M-PESA REST API SDK PHP Package by Mikeotizels
 
 Version 2.0.0 - August 2024
 
-https://github.com/mikeotizels/mpesa/tree/main/2.0.0
+https://github.com/mikeotizels/mpesa/tree/2.0.0
 
 This package contains the Mikeotizels implementation of the M-PESA REST APIs 
 in PHP. It seeks to help PHP developers integrate the various M-PESA APIs 
