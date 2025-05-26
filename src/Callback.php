@@ -554,10 +554,7 @@ class Callback
         #retryRequest($callbackData);
 
         // Respond to M-PESA
-        $this->sendResponse([
-            'ResultCode' => '0',
-            'ResultDesc' => 'Timeout notification received successfully'
-        ]);
+        $this->sendTimeoutNotificationResponse();
     }
 
     //-------------------------------------------------------------------------
@@ -619,37 +616,6 @@ class Callback
     //-------------------------------------------------------------------------
 
     /**
-     * Finishing Transaction Response
-     * 
-     * After obtaining the callback data from M-PESA, use this at the end of 
-     * your callback processing logic to complete the transaction.
-     * 
-     * Sending a response back to M-PESA is important to avoid double hitting of
-     * your callback endpoint since if a response delays, M-PESA API assumes it 
-     * as failed and retries, which can cause double execution of your code if 
-     * not well handled.
-     * 
-     * @since 2.0.0
-     * 
-     * @param boolean $status True if the transaction was completed successfully
-     *                        or false if the transaction processing failed.
-     */
-    public function finishTransaction($status = true)
-    {
-        if ($status === true) {
-            $this->sendResponse([
-                'ResultCode' => '0',
-                'ResultDesc' => 'The service request is processed successfully'
-            ]);
-        } else {
-            $this->sendResponse([
-                'ResultCode' => '1',
-                'ResultDesc' => 'The service request failed'
-            ]);
-        }
-    }
-
-    /**
      * C2B Payment Validation Response 
      *
      * Used to send a response to validate the details of a C2B payment before 
@@ -674,7 +640,7 @@ class Callback
      *                                   ThirdPartyTransID and this will be sent 
      *                                   back with the Confirmation notification. 
      * 
-     * @return string|null  
+     * @return void  
      */
     public function sendC2bValidationResponse($resultCode = 0, $transId = '')
     { 
@@ -720,7 +686,7 @@ class Callback
      *
      * @since 2.0.0
      * 
-     * @return string|null  
+     * @return void 
      */
     public function sendC2bConfirmationResponse()
     {
@@ -728,6 +694,57 @@ class Callback
             'ResultCode' => '0',
             'ResultDesc' => 'Success'
         ]);
+    }
+
+    /**
+     * Timeout Notification Response
+     *
+     * The timeout notification response is sent from the client to the M-PESA 
+     * gateway to acknowledge receipt of the timeout notification.
+     *
+     * @since 2.0.0
+     * 
+     * @return void 
+     */
+    public function sendTimeoutNotificationResponse() 
+    {
+        $this->sendResponse([
+            'ResultCode' => '0',
+            'ResultDesc' => 'Timeout notification received successfully'
+        ]);
+    }
+
+    /**
+     * Finishing Transaction Response
+     * 
+     * After obtaining the callback data from M-PESA, use this at the end of 
+     * your callback processing logic to complete the transaction.
+     * 
+     * Sending a response back to M-PESA is important to avoid double hitting of
+     * your callback endpoint since if a response delays, M-PESA API assumes it 
+     * as failed and retries, which can cause double execution of your code if 
+     * not well handled.
+     * 
+     * @since 2.0.0
+     * 
+     * @param boolean $status True if the transaction was completed successfully
+     *                        or false if the transaction processing failed.
+     * 
+     * @return void 
+     */
+    public function finishTransaction($status = true)
+    {
+        if ($status === true) {
+            $this->sendResponse([
+                'ResultCode' => '0',
+                'ResultDesc' => 'The service request is processed successfully'
+            ]);
+        } else {
+            $this->sendResponse([
+                'ResultCode' => '1',
+                'ResultDesc' => 'The service request failed'
+            ]);
+        }
     }
 
     //-------------------------------------------------------------------------
@@ -771,7 +788,8 @@ class Callback
      * 
      * @return The item value, or null if the item or its value does not exist.
      */
-    function getValueByName($items, string $name) {
+    private function getValueByName($items, string $name) 
+    {
         if (empty($items)) {
             return null;
         }
@@ -798,7 +816,8 @@ class Callback
      * 
      * @return The item value, or null if the item or its value does not exist.
      */
-    function getValueByKey($items, string $key) {
+    private function getValueByKey($items, string $key) 
+    {
         if (empty($items)) {
             return null;
         }
